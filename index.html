@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question for You, Imani 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            overflow-x: hidden;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .choice-container {
+            margin-top: 30px;
+        }
+
+        .choice-button {
+            font-size: 1.5rem;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s ease;
+            background: #ff69b4;
+            color: white;
+            animation: glow 1s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(255, 105, 180, 0.7); }
+            to { box-shadow: 0 0 20px rgba(255, 20, 147, 0.9); }
+        }
+
+        .choice-button:hover {
+            transform: scale(1.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .question-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .image-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .image-container img {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .yay-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: yellow;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Fake Credit Card Info */
+        .credit-card-prank {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: black;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Spotify Music Player */
+        .music-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .spotify-player {
+            border-radius: 12px;
+            width: 100%;
+            max-width: 320px;
+            height: 152px;
+            border: none;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Confetti Effect (Now Runs Forever) */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff69b4;
+            opacity: 0.7;
+            border-radius: 50%;
+            top: -10px;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Moving "No" Button */
+        .no-button {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hey Imani... 💖</h1>
+
+    <h2>You have two choices... Choose wisely!</h2>
+
+    <div class="choice-container">
+        <button class="choice-button" onclick="startJourney()"> Go on a journey to find out why you're amazing!</button>
+        <button class="choice-button" onclick="askOut()"> Click here for a surprise!</button>
+    </div>
+
+    <div id="journey" class="hidden">
+        <h2>✨  You are literally the most beautiful person ever. </h2>
+        <h2>✨  Your have the bestest smile ever. </h2>
+        <h2>✨  You make my world 100x better just by existing. </h2>
+        <h2>✨  Uuuurrrrggghhhhhh.. I can't hold it in anymore...</h2>
+        <button class="choice-button" onclick="askOut()">🥺 Click to see what I'm REALLY trying to say!</button>
+    </div>
+
+    <div id="question" class="question-container">
+        <h1>Imani... Will you be my girlfriend? 😘</h1>
+        <button class="choice-button" onclick="celebrate()">💖 YES 💖</button>
+        <button class="choice-button no-button" onclick="moveNoButton()"> No (you can’t say no baby!)</button>
+    </div>
+
+    <div id="yayText" class="yay-text">YAAAAAAAAAYYYYYYYYYYYYY!!!!! 🎉🎉🎉</div>
+
+    <!-- Her Picture Instead of GIF -->
+    <div id="image" class="image-container">
+        <img src="Imani.png" alt="Imani looking stunning">
+    </div>
+
+    <!-- Spotify Song (NFR - Lana Del Rey) -->
+    <div id="music" class="music-container">
+        <h2>🎶 And now... a song just for you, I mean US!!!🎶</h2>
+        <iframe class="spotify-player" src="https://open.spotify.com/embed/track/1LzNfuep1bnAUR9skqdHCK?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <!-- Prank Fake Credit Card Info -->
+    <div id="creditCard" class="credit-card-prank">
+        <h3>💳 Since you said yes, here’s my credit card info: </h3>
+        <p><strong>Card Number:</strong> 4928 3749 8293 ****</p>
+        <p><strong>Expiration Date:</strong> 07/29</p>
+        <p><strong>CVV:</strong> YOOH YOOHHHHH IM KIDDINGGGGGGGG</p>
+    </div>
+
+    <script>
+        function startJourney() {
+            document.getElementById("journey").classList.remove("hidden");
+        }
+
+        function askOut() {
+            document.getElementById("journey").style.display = "none";
+            document.getElementById("question").style.display = "block";
+        }
+
+        function celebrate() {
+            document.getElementById("yayText").style.display = "block";
+            document.getElementById("image").style.display = "block";
+            document.getElementById("music").style.display = "block";
+            document.getElementById("creditCard").style.display = "block";
+            setInterval(createConfetti, 200);
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(confetti);
+        }
+
+        function moveNoButton() {
+            let button = document.querySelector(".no-button");
+            button.style.left = Math.random() * (window.innerWidth - 150) + "px";
+            button.style.top = Math.random() * (window.innerHeight - 150) + "px";
+        }
+    </script>
+
+</body>
+</html>
